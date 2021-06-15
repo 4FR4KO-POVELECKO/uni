@@ -55,10 +55,14 @@ func (l *Lexer) LexerScan() (Position, Token, string) {
 			return l.pos, ASSIGN, "="
 		case '!':
 			return l.pos, EXC, "!"
+		case '?':
+			return l.pos, QUE, "?"
 		case '.':
 			return l.pos, DOT, "."
 		case ',':
 			return l.pos, COMMA, ","
+		case '_':
+			return l.pos, UNSCORE, "_"
 		case '(':
 			return l.pos, LPAR, "("
 		case ')':
@@ -71,6 +75,10 @@ func (l *Lexer) LexerScan() (Position, Token, string) {
 			return l.pos, LCUR, "{"
 		case '}':
 			return l.pos, RCUR, "}"
+		case '<':
+			return l.pos, LQUO, "<"
+		case '>':
+			return l.pos, RQUO, ">"
 		case '"':
 			return l.pos, QUOS, "\""
 		case '\'':
@@ -154,7 +162,7 @@ func (l *Lexer) lexVar() string {
 			lit = lit + string(r)
 		} else if unicode.IsDigit(r) {
 			lit = lit + string(r)
-		} else if r == '_' {
+		} else if r == UNSCORE {
 			lit = lit + string(r)
 		} else {
 			l.backup()

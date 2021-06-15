@@ -14,16 +14,22 @@ const (
 	MUL // *
 	DIV // /
 
-	ASSIGN // =
-	EXC    // !
-	DOT    // .
-	COMMA  // ,
+	ASSIGN  // =
+	EXC     // !
+	QUE     // ?
+	DOT     // .
+	COMMA   // ,
+	UNSCORE // _
+	
 	LPAR   // (
 	RPAR   // )
 	LCUR   // {
 	RCUR   // }
 	LSQU   // [
 	RSQU   // ]
+	LQUO   // <
+	RQUO   // >
+	
 	QUOS   // "
 	APOS   // '
 )
@@ -40,16 +46,22 @@ var tokens = []string{
 	MUL: "*",
 	DIV: "/",
 
-	ASSIGN: "=",
-	EXC:    "!",
-	DOT:    ".",
-	COMMA:  ",",
+	ASSIGN:  "=",
+	EXC:     "!",
+	QUE:     "?",
+	DOT:     ".",
+	COMMA:   ",",
+	UNSCORE: "_",
+
 	LPAR:   "(",
 	RPAR:   ")",
 	LCUR:   "{",
 	RCUR:   "}",
 	LSQU:   "[",
 	RSQU:   "]",
+	LQUO:   "<",
+	RQUO:   ">",
+
 	QUOS:   "\"",
 	APOS:   "'",
 }
